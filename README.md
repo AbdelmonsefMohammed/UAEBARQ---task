@@ -17,9 +17,9 @@ This task is submitted to UAEBARQ
 
 ## Instalation
 
-1: Clone or download the project
-2: run -> composer:install
-3: run -> cp .env.example .env
-4: run -> php artisan key:generate
-5: connect your database to .env file
-6: run php artisan migrate:fresh --seed
+- 1: Clone or download the project
+- 2: run -> composer:install
+- 3: run -> cp .env.example .env
+- 4: run -> php artisan key:generate
+- 5: connect your database to .env file
+- 6: run php artisan migrate:fresh --seed

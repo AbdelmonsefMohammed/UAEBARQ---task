@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Task</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -81,19 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <img src="https://ci4.googleusercontent.com/proxy/f5yI0YaIuK1YBjrxj4H3YvNFOiHBO23ken8Ip2saIe2YCUB3XMDweE1b1i11WGPRLVkWNKG70GQ0w76MLZ5wys1HLEFqNoAqIsvZZEQrwj-zw4I4v2ZSQZmPH1-69cwMIUyo=s0-d-e1-ft#https://drive.google.com/uc?id=14kQUWWluRNk3nrlFsBfqMRTPrL3NdEs0&export=download" alt="Build Status" width="200" height="95">
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
             </div>
         </div>
     </body>
