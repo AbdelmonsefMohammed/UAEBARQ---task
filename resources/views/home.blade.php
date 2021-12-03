@@ -17,7 +17,7 @@
         <table class="table table-inverse">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>#</th>
                     <th>User</th>
                     <th>Title</th>
                     <th>Description</th>
@@ -27,13 +27,13 @@
             <tbody id="tasks-list" name="tasks-list">
                 @foreach ($tasks as $task)
                 <tr id="task{{$task->id}}">
-                    <td>{{$task->id}}</td>
+                    <td>-</td>
                     <td>{{$task->user->name}}</td>
                     <td>{{$task->title}}</td>
                     <td>{{$task->description}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" id="btn-edit" value="edit">Edit</button>
-                        <button type="button" class="btn btn-danger" id="btn-delete" value="delete">Delete</button>
+                        <button type="button" class="btn btn-primary edit-task" id="btn-edit" data-id="{{$task->id}}" value="edit">Edit</button>
+                        <button type="button" class="btn btn-danger delete-task" id="btn-delete" data-id="{{$task->id}}" value="delete">Delete</button>
                     </td>
                 </tr>
                 @endforeach
@@ -42,13 +42,14 @@
         </table>
         <div style="float: right;">{{ $tasks->links() }}</div>
         
-        <div class="modal fade" id="formModalCreate" aria-hidden="true">
+        <div class="modal fade" id="formModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="formModalLabel">Create Task</h4>
                     </div>
                     <div class="modal-body">
+                        <div id="form-errors"></div>
                         <form id="myForm" name="myForm" class="form-horizontal" novalidate="">
 
                             <div class="form-group">

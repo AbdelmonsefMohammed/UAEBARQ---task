@@ -23,3 +23,15 @@ This task is submitted to UAEBARQ
 - 4: run -> php artisan key:generate
 - 5: connect your database to .env file
 - 6: run php artisan migrate:fresh --seed
+
+## Testing
+
+- Admin: 
+- Email: admin@test.com  / Password: 123456789
+-
+-
+- User: 
+- Email: user@test.com  / Password: 123456789
+
+-Thanks.
+

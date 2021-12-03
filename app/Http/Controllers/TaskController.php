@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TaskController extends Controller
 {
@@ -15,9 +16,9 @@ class TaskController extends Controller
     public function index()
     {
         if (auth()->user()->is_admin == 1) {
-            $tasks = Task::with('user')->paginate(8);
+            $tasks = Task::with('user')->orderBy('id','desc')->paginate(25);
         }else{
-            $tasks = Task::where('user_id', auth()->user()->id)->with('user')->paginate(8);
+            $tasks = Task::where('user_id', auth()->user()->id)->with('user')->orderBy('id','desc')->paginate(25);
         }
     
         return view('home',compact('tasks'));
@@ -42,15 +43,13 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, Task::rules());
-
-        $record = Task::create([
+        $task = Task::create([
             'user_id'       => auth()->user()->id,          
             'title'         => $request->title,
             'description'   => $request->description,
         ]);
 
-        $task = Task::with('user')->findOrFail($record->id);
-
+        $task->load('user');
         return response()->json($task);
     }
 
@@ -73,7 +72,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        return response()->json($task);
     }
 
     /**
@@ -88,7 +87,6 @@ class TaskController extends Controller
         $this->validate($request, Task::rules());
 
         $task->update([
-            'user_id'       => auth()->user()->id,          
             'title'         => $request->title,
             'description'   => $request->description,
         ]);
@@ -107,6 +105,6 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         $task->delete();
-        return response()->json('success', 'Task deleted successfully.');
+        return response()->json(True);
     }
 }
